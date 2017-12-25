@@ -1,0 +1,10 @@
+extends layouts
+
+block content
+	div.row
+		div.col-md-12
+			div.jumbotron
+				h1 #{title}
+				p #{subtitle}
+				p
+					a(href='/users').btn.btn-primary.btn-lg List Users

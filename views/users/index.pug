@@ -1,0 +1,30 @@
+extends ../layouts
+
+block content
+	h3 #{title}
+	hr
+	table.table.table-responsive.table-hover.table-bordered#data
+		thead
+			th.ctr No.
+			th Name
+			th.ctr Age
+			th.ctr Gender
+			th.ctr E-mail
+			th Address
+			th.ctr Action
+
+		tbody
+			each user, i in data
+				tr
+					td.ctr= i+1
+					td= user.name
+					td.ctr= user.age
+					td.ctr= user.gender
+					td= user.email
+					td= user.address
+					td.ctr.action
+						form(action='/users/delete/' + user.id, method="POST").form-group
+							a(href="/users/edit/" + user.id).btn.btn-default.btn-sm
+								i.glyphicon.glyphicon-pencil
+							button(type="submit", onclick="konfirmasi()").btn.btn-default.btn-sm
+								i.glyphicon.glyphicon-trash

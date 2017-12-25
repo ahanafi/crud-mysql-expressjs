@@ -1,0 +1,49 @@
+.row
+	.col-md-4
+		label(for='name') Name
+		input(type='text', name='name', placeholder='Name', value=user.name, ).form-control
+		br
+
+		label(for='age') Age
+		input(type='number', name='age', min='1', placeholder='Age of user', value=user.age, ).form-control
+		br
+
+		label(for='gender') Gender
+		select(name='gender', ).form-control
+			option(value='') -- Select Gender --
+			
+			- if(!user.gender) {
+				option(value='Male') Male
+				option(value='Female') Female
+			- } else {
+				- if(user.gender == "Male") {
+					option(value='Male', selected) Male
+					option(value='Female') Female
+				- } else {
+					option(value='Male') Male
+					option(value='Female', selected) Female
+				- }
+			- }
+
+	.col-md-4
+		label(for='email') E-mail
+		input(type='email', name='email', placeholder='E-mail of user', value=user.email, ).form-control
+		br
+
+		label(for='address') Address
+		textarea(name="address", rows="2", placeholder="Address of user", , style="resize:none;").form-control= user.address
+		br
+		
+		label(for="submit")
+		input(type="submit", name="submit", value="Send").btn.btn-primary
+		input(type="button", name="back", onclick="kembali()", value="Back", style="margin-left:5px;").btn.btn-default
+
+	.col-md-4
+		- if(messages.danger) {
+			.alert.alert-danger
+				strong Oops!
+				ul(style="padding-left:15px !important")
+					- for(var i=0; i<messages.danger.length; i++) {
+						li= messages.danger[i]
+					- }
+		- }

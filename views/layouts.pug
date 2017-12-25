@@ -1,0 +1,45 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title CRUD Application
+        link(rel='stylesheet', href='/bootstrap/dist/css/bootstrap.min.css')
+        link(rel="stylesheet", href="/css/style.css")
+        link(rel="stylesheet", href="/datatables/dataTables.bootstrap.css")
+    body
+
+        .container
+            nav.navbar.navbar-default
+                .container-fluid
+                    .navbar-header
+                        button(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1').navbar-toggle.collapsed
+                            span.sr-only Toggle Navigation
+                            span.icon-bar
+                            span.icon-bar
+                            span.icon-bar
+                        a(href='/').navbar-brand CRUD Apps
+                    
+                    .collapse.navbar-collapse#bs-example-navbar-collapse-1
+                        ul.nav.navbar-nav
+                            li
+                                a(href='/') Home
+                            li
+                                a(href='/users') List Users
+                            li
+                                a(href='/users/add') Add User
+                            li
+                                a(href="/about") About
+        
+        .container
+            include message
+            block content
+            .col-md-12
+                hr
+                footer Created by Ahmad Hanafi - Copyright &copy; 2017
+        script(type='text/javascript', src='/jquery/dist/jquery.min.js')
+        script(type='text/javascript', src='/bootstrap/dist/js/bootstrap.min.js')
+        script(type='text/javascript', src='/datatables/jquery.dataTables.js')
+        script(type='text/javascript', src='/datatables/dataTables.bootstrap.min.js')
+        script(type='text/javascript', src='/js/script.js')

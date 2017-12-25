@@ -1,0 +1,20 @@
+extends layouts
+
+block content
+	.col-md-9
+		.jumbotron
+			h3= title
+			p(style="font-size:14px;")= subtitle
+
+	.col-md-3
+		.panel.panel-default(style="text-align:center;")
+			.panel-heading About Author
+			.panel-body
+				img(src=author.img, style="width:70%;margin:0 auto !important;").img.img-responsive
+
+				h3= author.name
+			.panel-footer
+				a(href=social.fb).btn.btn-xs.btn-primary Facebook
+				a(href=social.github).btn.btn-xs.btn-default Github
+				a(href=website).btn.btn-xs.btn-success Website
+

@@ -1,0 +1,16 @@
+.ctr{
+	text-align: center !important;
+}
+
+.action > form > a{
+	margin-right: 5px;
+}
+
+footer{
+	text-align: center !important;
+	font-size: 12px;
+}
+
+.panel-footer > a{
+	margin-left: 5px;
+}

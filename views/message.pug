@@ -1,0 +1,9 @@
+- if(messages.success) {
+	.alert.alert-success
+		strong Yosh!
+		span= messages.success
+- } else if(messages.error) {
+	.alert.alert-danger
+		strong Oops!
+		span= messages.error
+- }
